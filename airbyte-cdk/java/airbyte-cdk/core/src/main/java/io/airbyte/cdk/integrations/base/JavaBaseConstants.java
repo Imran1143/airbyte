@@ -35,7 +35,8 @@ public final class JavaBaseConstants {
       COLUMN_NAME_AB_RAW_ID,
       COLUMN_NAME_AB_EXTRACTED_AT,
       COLUMN_NAME_AB_LOADED_AT,
-      COLUMN_NAME_DATA);
+      COLUMN_NAME_DATA,
+      COLUMN_NAME_AB_META);
   public static final List<String> V2_FINAL_TABLE_METADATA_COLUMNS = List.of(
       COLUMN_NAME_AB_RAW_ID,
       COLUMN_NAME_AB_EXTRACTED_AT,
