@@ -25,6 +25,7 @@ import io.airbyte.integrations.base.destination.typing_deduping.ColumnId;
 import io.airbyte.integrations.base.destination.typing_deduping.Struct;
 import io.airbyte.integrations.base.destination.typing_deduping.Union;
 import io.airbyte.integrations.base.destination.typing_deduping.UnsupportedOneOf;
+import io.airbyte.integrations.destination.redshift.constants.RedshiftDestinationConstants;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -35,7 +36,6 @@ import org.jooq.Condition;
 import org.jooq.DataType;
 import org.jooq.Field;
 import org.jooq.SQLDialect;
-import org.jooq.impl.DefaultDataType;
 import org.jooq.impl.SQLDataType;
 
 public class RedshiftSqlGenerator extends JdbcSqlGenerator {
@@ -56,7 +56,7 @@ public class RedshiftSqlGenerator extends JdbcSqlGenerator {
    * @return
    */
   private DataType<?> getSuperType() {
-    return new DefaultDataType<>(null, String.class, "super");
+    return RedshiftDestinationConstants.SUPER_TYPE;
   }
 
   @Override
